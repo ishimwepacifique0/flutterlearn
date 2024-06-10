@@ -1,63 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:sessionproject/AppNavigation.dart';
+import 'package:sessionproject/components/moviesCard.dart';
+import 'package:sessionproject/navigation.dart';
+import 'package:sessionproject/navigation/bottomNavigation.dart';
+import 'package:sessionproject/navigation/setState.dart';
+import 'package:sessionproject/screen/aboutus.dart';
+import 'package:sessionproject/screen/examples.dart';
+import 'package:sessionproject/screen/homeScreen.dart';
+import 'package:sessionproject/textInput.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Homescreen(),
-  ));
+  runApp(MyApp());
 }
 
-
-class Homescreen extends StatelessWidget {
-  const Homescreen({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home screen'),
-      ),
-      body:  Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: Container(
-              child:  const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Username"),
-                  TextField(
-                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Username',
-                    prefix: Icon(Icons.inbox_outlined)
-                   ), 
-                  )
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: Container(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                 backgroundColor: Colors.amberAccent,
-                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0)
-                 )
-                ),
-                onPressed: () {},
-                child: Text('Submit'),
-              ),
-            
-            ),
-          )
-
-              
-        ],
-      )
-  
-    ) ;
+    return MaterialApp(
+      home: Home()
+    );
   }
 }
+
